@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vende tu vivienda con un plan | Valoración gratuita</title>
+<meta name="description" content="Valoración gratuita y un plan de venta a medida para tu vivienda en Barcelona y comarcas. Te llamamos en menos de 24 horas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F2E9;--card:#FFFDF8;--soft:#EFE9DB;--line:#E2DAC8;--ink:#232E3B;--mute:#5F6773;--brand:#A8462E;--brand-d:#8E3824;--brand-soft:#F8E4DC;--on-brand:#fff;--green:#2F6B45;--green-s:#DDEFE2;--red:#A8301F;--shadow:0 1px 2px #3b2d1a12,0 10px 30px #3b2d1a14;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Bitter,Georgia,serif;line-height:1.15;margin:0;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:15px 26px;font:600 16px Inter,sans-serif;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s}
+.btn.p{background:var(--brand);color:var(--on-brand)}
+.btn.p:hover{background:var(--brand-d);transform:translateY(-1px)}
+.btn.g{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.g:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.eyebrow{font:600 13px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.mute{color:var(--mute)}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.s{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:700 20px Bitter,serif;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:9px;background:var(--brand);display:grid;place-items:center;color:#fff;font-style:normal;font-size:15px}
+.nav .btn{padding:10px 18px;font-size:14px}
+.nav-links{display:flex;gap:26px;font-size:15px}
+.nav-links a{text-decoration:none;color:var(--mute)}
+.nav-links a:hover{color:var(--ink)}
+
+/* Hero */
+.hero{padding:72px 0 88px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,6vw,68px);margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero p.lead{font-size:19px;color:var(--mute);max-width:540px;margin:0 0 32px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;font-size:14px;color:var(--mute)}
+.trust span{display:flex;align-items:center;gap:8px}
+.trust b{width:20px;height:20px;border-radius:50%;background:var(--green-s);color:var(--green);display:grid;place-items:center;font-size:12px}
+.hero-card{background:var(--card);border-radius:28px;padding:30px;box-shadow:var(--shadow);position:relative}
+.hero-card h3{font-size:22px;margin-bottom:6px}
+.hero-card .row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-top:1px solid var(--line);font-size:15px}
+.hero-card .row:first-of-type{border-top:0}
+.pill{font:600 12px Inter,sans-serif;padding:5px 11px;border-radius:999px;background:var(--soft)}
+.pill.ok{background:var(--green-s);color:var(--green)}
+.pill.br{background:var(--brand-soft);color:var(--brand)}
+.blob{position:absolute;right:-120px;top:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--brand-soft),transparent 70%);z-index:-1}
+
+/* Big statement */
+.statement{background:var(--ink);color:#F6F2E9;padding:96px 0}
+.statement h2{font-size:clamp(32px,5vw,56px);max-width:900px}
+.statement h2 span{color:#E58A6E}
+.statement p{color:#C9CDD3;max-width:620px;font-size:18px;margin:24px 0 0}
+
+/* Sections */
+section.sec{padding:96px 0}
+.sec-head{max-width:680px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(30px,4vw,44px);margin-top:12px}
+.sec-head p{color:var(--mute);margin:16px 0 0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--card);border-radius:var(--r);padding:28px;box-shadow:var(--shadow)}
+.card .ic{width:46px;height:46px;border-radius:14px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;margin-bottom:18px}
+.card h3{font-size:20px;margin-bottom:10px}
+.card p{margin:0;color:var(--mute);font-size:15.5px}
+
+/* Method */
+.method{background:var(--soft)}
+.steps{display:grid;gap:14px}
+.step{display:grid;grid-template-columns:80px 1fr auto;gap:20px;align-items:center;background:var(--card);border-radius:var(--r);padding:24px 28px}
+.step .n{font:700 34px Bitter,serif;color:var(--brand)}
+.step h3{font-size:20px}
+.step p{margin:4px 0 0;color:var(--mute);font-size:15.5px}
+.step .who{font-size:13px;color:var(--mute);text-align:right;max-width:180px}
+
+/* Not for everyone */
+.filter{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.filter .card ul{margin:14px 0 0;padding:0;list-style:none}
+.filter .card li{padding:9px 0 9px 30px;position:relative;border-top:1px solid var(--line);font-size:15.5px}
+.filter .card li:first-child{border-top:0}
+.filter .card li::before{content:"✓";position:absolute;left:0;top:9px;color:var(--green);font-weight:700}
+.filter .card.no li::before{content:"✕";color:var(--red)}
+
+/* Zones */
+.zones{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.zones span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:15px}
+
+/* FAQ */
+details{background:var(--card);border-radius:14px;padding:20px 24px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";font-size:22px;line-height:1;color:var(--brand)}
+details[open] summary::after{content:"−"}
+details p{margin:12px 0 0;color:var(--mute)}
+
+/* Form section */
+.form-sec{background:var(--ink);padding:96px 0}
+.form-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.form-sec .intro h2{color:#F6F2E9;font-size:clamp(30px,4vw,46px);margin-top:12px}
+.form-sec .intro p{color:#C9CDD3;margin:18px 0 0}
+.form-sec .eyebrow{color:#E58A6E}
+.quiz{background:var(--card);border-radius:26px;padding:34px;box-shadow:0 20px 60px #0005;min-height:460px;display:flex;flex-direction:column}
+.bar{height:6px;background:var(--soft);border-radius:9px;overflow:hidden;margin-bottom:10px}
+.bar i{display:block;height:100%;width:0;background:var(--brand);border-radius:9px;transition:width .35s}
+.count{font-size:13px;color:var(--mute);margin-bottom:22px}
+.q{display:none;flex:1;animation:in .3s ease}
+.q.on{display:flex;flex-direction:column}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.q h3{font-size:26px;margin-bottom:6px}
+.q .hint{color:var(--mute);font-size:15px;margin:0 0 22px}
+.opts{display:grid;gap:10px}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:15px 18px;font:500 16px Inter,sans-serif;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink)}
+.opt.sel{border-color:var(--brand);background:var(--brand-soft)}
+.opt kbd{font:600 12px Inter,sans-serif;width:26px;height:26px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;background:var(--card);flex:none}
+.opt small{display:block;color:var(--mute);font-size:13.5px;font-weight:400}
+.field{display:block;margin-bottom:14px}
+.field span{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+.field input,.field textarea,.field select{width:100%;font:16px Inter,sans-serif;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;outline:none}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--brand)}
+.field textarea{min-height:110px;resize:vertical}
+.err{color:var(--red);font-size:14px;margin:4px 0 0;min-height:20px}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--mute);margin:8px 0 4px}
+.check input{width:20px;height:20px;margin-top:1px;accent-color:var(--brand);flex:none}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:24px}
+.back{background:none;border:0;font:500 15px Inter,sans-serif;color:var(--mute);cursor:pointer;padding:8px 0}
+.back:hover{color:var(--ink)}
+.back[hidden]{visibility:hidden;display:block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.done{text-align:center;justify-content:center;align-items:center}
+.done .ok{width:72px;height:72px;border-radius:50%;background:var(--green-s);color:var(--green);display:grid;place-items:center;font-size:34px;margin:0 auto 22px}
+.done p{color:var(--mute);max-width:380px;margin:12px auto 26px}
+
+footer{padding:48px 0;font-size:14px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--mute)}
+
+.sticky-cta{display:none}
+
+@media (max-width:900px){
+ .hero-grid,.form-grid,.filter{grid-template-columns:1fr}
+ .cards{grid-template-columns:1fr 1fr}
+ .nav-links{display:none}
+ .hero{padding:44px 0 64px}
+ .step{grid-template-columns:56px 1fr}
+ .step .who{grid-column:2;text-align:left;max-width:none}
+}
+@media (max-width:560px){
+ body{font-size:16px}
+ .wrap{padding:0 16px}
+ .cards,.opts.two{grid-template-columns:1fr}
+ section.sec,.statement,.form-sec{padding:68px 0}
+ .quiz{padding:24px 20px;border-radius:22px}
+ .q h3{font-size:22px}
+ .hero .cta .btn{width:100%}
+ .sticky-cta{display:block;position:fixed;left:16px;right:16px;bottom:16px;z-index:30;transition:transform .25s}
+ .sticky-cta .btn{width:100%;box-shadow:0 10px 30px #0004}
+ .sticky-cta.hide{transform:translateY(140%)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+ <div class="wrap nav">
+  <a class="logo" href="#top"><i>CZ</i><span data-cfg="marca">Captación Zona</span></a>
+  <nav class="nav-links"><a href="#metodo">Método</a><a href="#zonas">Zonas</a><a href="#faq">Preguntas</a></nav>
+  <a class="btn p" href="#valoracion">Valoración gratuita</a>
+ </div>
+</header>
+
+<main id="top">
+ <section class="hero">
+  <div class="blob"></div>
+  <div class="wrap hero-grid">
+   <div>
+    <span class="eyebrow">Venta de viviendas · Barcelona y comarcas</span>
+    <h1>Tu casa no necesita otro anuncio. Necesita <em>un plan.</em></h1>
+    <p class="lead">Estudiamos tu vivienda, la ponemos al precio que el mercado sí paga y la presentamos solo a compradores que pueden comprarla. Tú decides; nosotros nos ocupamos del resto.</p>
+    <div class="cta">
+     <a class="btn p" href="#valoracion">Quiero saber cuánto vale mi casa →</a>
+     <a class="btn g" href="#metodo">Ver cómo trabajamos</a>
+    </div>
+    <div class="trust">
+     <span><b>✓</b>Valoración sin compromiso</span>
+     <span><b>✓</b>Te llamamos en menos de 24 h</span>
+     <span><b>✓</b>Acompañamiento hasta notaría</span>
+    </div>
+   </div>
+   <aside class="hero-card" aria-label="Ejemplo de diagnóstico">
+    <span class="eyebrow">Tu diagnóstico incluye</span>
+    <h3 style="margin-top:10px">Qué recibes en la primera reunión</h3>
+    <div class="row"><span>Precio de mercado con comparables reales</span><span class="pill ok">Incluido</span></div>
+    <div class="row"><span>Perfil del comprador ideal</span><span class="pill ok">Incluido</span></div>
+    <div class="row"><span>Plan de presentación y difusión</span><span class="pill ok">Incluido</span></div>
+    <div class="row"><span>Plazo estimado de venta</span><span class="pill ok">Incluido</span></div>
+    <div class="row"><span>Coste para ti</span><span class="pill br">0 €</span></div>
+   </aside>
+  </div>
+ </section>
+
+ <section class="statement">
+  <div class="wrap">
+   <span class="eyebrow" style="color:#E58A6E">Por qué es distinto</span>
+   <h2 style="margin-top:14px">Publicar y esperar no es vender. Vender es <span>encontrar al comprador correcto, al precio correcto.</span></h2>
+   <p>Cada mes sin vender cuesta dinero y desgaste. Por eso empezamos con un diagnóstico honesto, antes de hacer una sola foto.</p>
+  </div>
+ </section>
+
+ <section class="sec">
+  <div class="wrap">
+   <div class="sec-head">
+    <span class="eyebrow">Lo que hacemos por tu vivienda</span>
+    <h2>Cuatro cosas que marcan la diferencia en el precio final</h2>
+   </div>
+   <div class="cards">
+    <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div><h3>Precio con criterio</h3><p>Analizamos ventas reales de tu barrio, no precios de portal. Un precio bien puesto vende antes y negocia menos.</p></article>
+    <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></div><h3>Presentación que atrae</h3><p>Fotografía cuidada, textos que cuentan la vida de la casa y difusión en los canales donde está tu comprador.</p></article>
+    <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg></div><h3>Visitas filtradas</h3><p>Solo entran compradores con financiación revisada. Menos visitas, más serias y sin perder tus tardes.</p></article>
+    <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div><h3>Papeles resueltos</h3><p>Certificados, arras, hipoteca del comprador y notaría. Coordinamos cada paso para que firmes tranquilo.</p></article>
+   </div>
+  </div>
+ </section>
+
+ <section class="sec method" id="metodo">
+  <div class="wrap">
+   <div class="sec-head">
+    <span class="eyebrow">El método</span>
+    <h2>Cinco fases. Ninguna empieza hasta que la anterior está cerrada.</h2>
+   </div>
+   <div class="steps">
+    <div class="step"><span class="n">01</span><div><h3>Diagnóstico</h3><p>Visitamos la vivienda, escuchamos tu situación y tus plazos.</p></div><span class="who">Reunión de 45 min, sin compromiso</span></div>
+    <div class="step"><span class="n">02</span><div><h3>Valoración y estrategia</h3><p>Precio de salida, margen de negociación y perfil de comprador por escrito.</p></div><span class="who">En 48 h tras la visita</span></div>
+    <div class="step"><span class="n">03</span><div><h3>Preparación y lanzamiento</h3><p>Pequeñas mejoras, sesión de fotos y publicación en los canales elegidos.</p></div><span class="who">Primera semana</span></div>
+    <div class="step"><span class="n">04</span><div><h3>Visitas y negociación</h3><p>Filtramos, enseñamos y negociamos con datos. Te informamos de cada oferta.</p></div><span class="who">Informe semanal</span></div>
+    <div class="step"><span class="n">05</span><div><h3>Cierre</h3><p>Arras, documentación, hipoteca del comprador y firma en notaría.</p></div><span class="who">Te acompañamos hasta la llave</span></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="sec">
+  <div class="wrap">
+   <div class="sec-head">
+    <span class="eyebrow">Hablemos claro</span>
+    <h2>No trabajamos con todas las viviendas. Así sabes si encajamos.</h2>
+   </div>
+   <div class="filter">
+    <div class="card"><h3>Encajamos si…</h3><ul><li>Quieres vender en los próximos meses, no solo «probar suerte».</li><li>Prefieres un precio realista que una venta que nunca llega.</li><li>Valoras tener un único interlocutor que lo coordine todo.</li><li>Tu vivienda está en una de nuestras zonas.</li></ul></div>
+    <div class="card no"><h3>Mejor no si…</h3><ul><li>Buscas a quien prometa el precio más alto sin datos.</li><li>Quieres tener la casa en diez agencias a la vez.</li><li>No estás dispuesto a hacer ningún ajuste para vender.</li></ul></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="sec method" id="zonas">
+  <div class="wrap">
+   <div class="sec-head" style="margin-bottom:24px">
+    <span class="eyebrow">Dónde trabajamos</span>
+    <h2>Conocemos cada calle de estas zonas</h2>
+    <p>Si tu vivienda está cerca, escríbenos igualmente y te diremos si podemos ayudarte.</p>
+   </div>
+   <div class="zones" id="zonesList"></div>
+  </div>
+ </section>
+
+ <section class="sec" id="faq">
+  <div class="wrap" style="max-width:820px">
+   <div class="sec-head"><span class="eyebrow">Preguntas frecuentes</span><h2>Lo que suelen preguntarnos</h2></div>
+   <details><summary>¿La valoración tiene algún coste?</summary><p>No. La primera reunión y la valoración son gratuitas y no te obligan a nada.</p></details>
+   <details><summary>¿Cuánto tarda en venderse una vivienda?</summary><p>Depende de la zona, el estado y el precio. En el diagnóstico te damos un plazo estimado con datos de ventas recientes cerca de tu casa.</p></details>
+   <details><summary>Necesito vender para comprar otra. ¿Podéis ayudarme?</summary><p>Sí. Coordinamos ambas operaciones para que no te quedes sin casa ni pagues dos hipotecas a la vez.</p></details>
+   <details><summary>¿Qué documentación necesito para empezar?</summary><p>Para la primera reunión no hace falta nada. Más adelante te ayudamos a reunir la nota simple, el certificado energético y el resto.</p></details>
+  </div>
+ </section>
+
+ <section class="form-sec" id="valoracion">
+  <div class="wrap form-grid">
+   <div class="intro">
+    <span class="eyebrow">Valoración gratuita</span>
+    <h2>El primer paso no es publicar. Es saber dónde estás.</h2>
+    <p>Responde unas preguntas rápidas (menos de 1 minuto). Revisamos tu caso y, si podemos ayudarte, te llamamos en menos de 24 horas.</p>
+    <div class="trust" style="color:#C9CDD3"><span><b>✓</b>Sin compromiso</span><span><b>✓</b>Tus datos no se comparten</span></div>
+   </div>
+
+   <form class="quiz" id="quiz" novalidate autocomplete="on">
+    <div class="bar"><i id="barFill"></i></div>
+    <div class="count" id="count"></div>
+    <label class="hp" aria-hidden="true">No rellenar<input type="text" name="web" id="hp" tabindex="-1" autocomplete="off"></label>
+
+    <!-- 1 -->
+    <div class="q" data-q="tipoLead">
+     <h3>¿Qué quieres hacer?</h3><p class="hint">Elige la opción que mejor te describe.</p>
+     <div class="opts">
+      <button type="button" class="opt" data-v="vendedor"><kbd>1</kbd><span>Vender mi vivienda<small>Quiero saber cuánto vale y cómo venderla</small></span></button>
+      <button type="button" class="opt" data-v="ambos"><kbd>2</kbd><span>Vender para comprar otra<small>Necesito coordinar las dos operaciones</small></span></button>
+      <button type="button" class="opt" data-v="comprador"><kbd>3</kbd><span>Comprar una vivienda<small>Busco casa en alguna de vuestras zonas</small></span></button>
+     </div>
+    </div>
+
+    <!-- Vendedor -->
+    <div class="q" data-q="inmuebleVenta" data-if="sells">
+     <h3>¿Qué tipo de vivienda es?</h3><p class="hint">La que quieres vender.</p>
+     <div class="opts two" data-list="TIP"></div>
+    </div>
+    <div class="q" data-q="poblacionVenta" data-if="sells">
+     <h3>¿Dónde está?</h3><p class="hint">Población o barrio.</p>
+     <div class="opts two" data-list="MUN"></div>
+    </div>
+    <div class="q" data-q="plazo" data-if="sells">
+     <h3>¿Cuándo te gustaría vender?</h3><p class="hint">Así sabemos con qué urgencia llamarte.</p>
+     <div class="opts two" data-list="PLZ"></div>
+    </div>
+    <div class="q" data-q="motivo" data-if="sells">
+     <h3>¿Qué te lleva a vender?</h3><p class="hint">Nos ayuda a preparar la reunión. Es confidencial.</p>
+     <div class="opts two" data-list="MOT"></div>
+    </div>
+
+    <!-- Comprador -->
+    <div class="q" data-q="zonasInteres" data-if="buys">
+     <h3>¿Dónde buscas?</h3><p class="hint">Elige la zona que más te interesa.</p>
+     <div class="opts two" data-list="MUN"></div>
+    </div>
+    <div class="q" data-q="financiacion" data-if="buysOnly">
+     <h3>¿Cómo tienes la financiación?</h3><p class="hint">Así te enseñamos viviendas que encajan contigo.</p>
+     <div class="opts two" data-list="FIN"></div>
+    </div>
+    <div class="q" data-q="momento" data-if="buysOnly">
+     <h3>¿En qué punto estás?</h3><p class="hint">Sin presión: solo para orientarte mejor.</p>
+     <div class="opts" data-list="MOM"></div>
+    </div>
+
+    <!-- Contacto -->
+    <div class="q" data-q="contacto" data-form>
+     <h3>¿Cómo te contactamos?</h3><p class="hint">Te llamaremos nosotros. Sin spam.</p>
+     <label class="field"><span>Nombre y apellidos</span><input id="f_nombre" name="name" autocomplete="name" maxlength="80" required></label>
+     <label class="field"><span>Teléfono</span><input id="f_tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="600 000 000" required></label>
+     <label class="field"><span>Email <span class="mute" style="font-weight:400">(opcional)</span></span><input id="f_email" name="email" type="email" autocomplete="email" maxlength="120"></label>
+     <p class="err" id="errC" role="alert"></p>
+    </div>
+
+    <!-- Último paso -->
+    <div class="q" data-q="final" data-form>
+     <h3>Último paso</h3><p class="hint">¿Algo que debamos saber? (opcional)</p>
+     <label class="field"><span>Cuéntanos tu situación</span><textarea id="f_msg" maxlength="1200" placeholder="Ej.: piso heredado, necesita reforma, queremos vender antes del verano…"></textarea></label>
+     <label class="check"><input type="checkbox" id="f_ok"><span>He leído y acepto la <a href="#privacidad" id="privLink">política de privacidad</a> y doy mi consentimiento para que me contactéis sobre mi consulta.</span></label>
+     <p class="err" id="errF" role="alert"></p>
+    </div>
+
+    <!-- Gracias -->
+    <div class="q done" data-q="gracias">
+     <div class="ok">✓</div>
+     <h3>¡Recibido, <span id="thxName"></span>!</h3>
+     <p>Revisamos tu caso y te llamamos en menos de 24 horas laborables. Si lo prefieres, escríbenos ahora por WhatsApp.</p>
+     <a class="btn p" id="waBtn" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+
+    <div class="qnav" id="qnav">
+     <button type="button" class="back" id="back">← Atrás</button>
+     <button type="button" class="btn p" id="next">Siguiente</button>
+    </div>
+   </form>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <span>© <span id="yr"></span> <span data-cfg="marca">Captación Zona</span><span id="telPie"></span></span>
+  <span><a href="#privacidad" id="privLink2">Política de privacidad</a></span>
+ </div>
+</footer>
+
+<div class="sticky-cta" id="stk"><a class="btn p" href="#valoracion">Valoración gratuita →</a></div>
+
+<dialog id="privDlg" style="max-width:640px;border:0;border-radius:18px;padding:28px;background:var(--card);color:var(--ink)">
+ <h3 style="margin-bottom:12px">Política de privacidad</h3>
+ <p class="mute" style="font-size:15px" id="privText"></p>
+ <button class="btn p" onclick="this.closest('dialog').close()" style="margin-top:12px">Cerrar</button>
+</dialog>
+
+<script>
+/* ======================================================================
+   CONFIGURACIÓN: cambia estos datos por los tuyos
+   ====================================================================== */
+const CONFIG = {
+  marca: 'Captación Zona',              // Nombre que se ve en la página
+  telefonoVisible: '',                  // Ej.: '600 123 456' (se ve en el pie)
+  whatsapp: '',                         // Solo números con prefijo, ej.: '34600123456'
+  privacidadTexto: 'Responsable: ' + 'Captación Zona' + '. Finalidad: atender tu solicitud de valoración o búsqueda de vivienda y contactarte sobre ella. Legitimación: tu consentimiento. No cedemos tus datos a terceros. Puedes ejercer tus derechos de acceso, rectificación y supresión escribiéndonos.',
+  privacidadUrl: '',                    // Si tienes una página propia de privacidad, pon su URL aquí
+};
+/* Firebase: el mismo proyecto que usa tu CRM */
+const FB = { apiKey: 'AIzaSyCqLslzaYONrp0aCzcVInlDniixgZPXlJM', projectId: 'captacionzona' };
+
+/* Listas iguales a las del CRM, para que los valores encajen en sus desplegables */
+const L = {
+  TIP: ['Piso','Casa/Chalet','Ático','Dúplex','Local','Terreno','Otro'],
+  MUN: ['Barcelona - La Sagrera','Barcelona - Sant Andreu','Barcelona - Nou Barris','Barcelona - Sant Martí','Abrera','Martorell','Esparreguera','Sant Esteve Sesrovires','Igualada','Otra zona'],
+  PLZ: ['Ahora','1-3 meses','3-6 meses','Más de 6 meses'],
+  MOT: ['Vender para comprar','Herencia','Cambio de ciudad','Separación','Necesita liquidez','Otro'],
+  FIN: ['Aprobado','En trámite','Paga sin hipoteca','Sin estudio'],
+  MOM: ['Ya busca activamente','Está empezando','Solo se informa'],
+};
+const LABEL = { 'Paga sin hipoteca':'Compro sin hipoteca', 'Sin estudio':'Aún no lo he mirado', 'Aprobado':'Hipoteca aprobada', 'En trámite':'La estoy tramitando',
+  'Ya busca activamente':'Busco activamente', 'Está empezando':'Estoy empezando a mirar', 'Solo se informa':'Solo me estoy informando', 'Necesita liquidez':'Necesito liquidez' };
+
+/* ---------- Pintar config y listas ---------- */
+const $ = id => document.getElementById(id);
+document.querySelectorAll('[data-cfg]').forEach(e => e.textContent = CONFIG[e.dataset.cfg] || '');
+$('yr').textContent = new Date().getFullYear();
+if (CONFIG.telefonoVisible) $('telPie').textContent = ' · ' + CONFIG.telefonoVisible;
+$('zonesList').innerHTML = L.MUN.filter(z => z !== 'Otra zona').map(z => `<span>${z.replace('Barcelona - ','Barcelona · ')}</span>`).join('');
+document.querySelectorAll('[data-list]').forEach(box => {
+  box.innerHTML = L[box.dataset.list].map((v,i) => `<button type="button" class="opt" data-v="${v}"><kbd>${i+1}</kbd><span>${(LABEL[v]||v).replace('Barcelona - ','BCN · ')}</span></button>`).join('');
+});
+['privLink','privLink2'].forEach(id => $(id).addEventListener('click', e => {
+  if (CONFIG.privacidadUrl) { $(id).href = CONFIG.privacidadUrl; $(id).target = '_blank'; return; }
+  e.preventDefault(); $('privText').textContent = CONFIG.privacidadTexto; $('privDlg').showModal();
+}));
+addEventListener('scroll', () => $('hdr').classList.toggle('s', scrollY > 10), {passive:true});
+new IntersectionObserver(es => es.forEach(e => $('stk').classList.toggle('hide', e.isIntersecting)), {threshold:.15}).observe($('valoracion'));
+
+/* ---------- Formulario por pasos ---------- */
+const A = {};                                   // respuestas
+const qs = [...document.querySelectorAll('.q')];
+const cond = { sells: () => A.tipoLead !== 'comprador', buys: () => A.tipoLead !== 'vendedor', buysOnly: () => A.tipoLead === 'comprador' };
+const flow = () => qs.filter(q => q.dataset.q !== 'gracias' && (!q.dataset.if || cond[q.dataset.if]()));
+let cur = 0, sending = false;
+
+function show(i) {
+  const f = flow(); cur = Math.max(0, Math.min(i, f.length - 1));
+  qs.forEach(q => q.classList.remove('on')); f[cur].classList.add('on');
+  $('barFill').style.width = (cur / f.length * 100) + '%';
+  $('count').textContent = `Paso ${cur + 1} de ${f.length}`;
+  $('back').hidden = cur === 0;
+  const isForm = 'form' in f[cur].dataset;
+  $('next').style.display = isForm ? '' : 'none';
+  $('next').textContent = f[cur].dataset.q === 'final' ? 'Solicitar valoración' : 'Siguiente';
+  if (A.tipoLead === 'comprador' && f[cur].dataset.q === 'final') $('next').textContent = 'Enviar';
+  const first = f[cur].querySelector('input,textarea,.opt.sel,.opt');
+  if (first && started) setTimeout(() => first.focus({preventScroll:true}), 50);
+}
+let started = false;
+
+$('quiz').addEventListener('click', e => {
+  const o = e.target.closest('.opt'); if (!o) return;
+  const q = o.closest('.q');
+  q.querySelectorAll('.opt').forEach(x => x.classList.toggle('sel', x === o));
+  A[q.dataset.q] = o.dataset.v; started = true;
+  setTimeout(() => show(cur + 1), 180);
+});
+$('back').onclick = () => { started = true; show(cur - 1); };
+$('next').onclick = () => { started = true; next(); };
+$('quiz').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.tagName === 'INPUT') { e.preventDefault(); next(); }
+  if (/^[1-9]$/.test(e.key) && !/INPUT|TEXTAREA/.test(e.target.tagName)) { const o = flow()[cur].querySelectorAll('.opt')[e.key - 1]; if (o) o.click(); }
+});
+
+function next() {
+  const q = flow()[cur].dataset.q;
+  if (q === 'contacto') {
+    const n = $('f_nombre').value.trim(), t = $('f_tel').value.replace(/[^\d+]/g, ''), m = $('f_email').value.trim();
+    if (n.length < 2) return err('errC', 'Escribe tu nombre.', 'f_nombre');
+    if (t.replace(/\D/g,'').length < 9) return err('errC', 'Revisa el teléfono: debe tener al menos 9 cifras.', 'f_tel');
+    if (m && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m)) return err('errC', 'Revisa el email o déjalo vacío.', 'f_email');
+    $('errC').textContent = ''; return show(cur + 1);
+  }
+  if (q === 'final') {
+    if (!$('f_ok').checked) return err('errF', 'Necesitamos tu consentimiento para poder contactarte.', 'f_ok');
+    $('errF').textContent = ''; return send();
+  }
+  show(cur + 1);
+}
+function err(id, msg, focus) { $(id).textContent = msg; $(focus).focus(); }
+
+/* ---------- Envío al CRM (Firestore, colección "leads") ---------- */
+function utm() {
+  const p = new URLSearchParams(location.search), o = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(k => { const v = p.get(k); if (v) o[k] = v.slice(0, 100); });
+  return o;
+}
+function buildLead() {
+  const u = utm(), src = (u.utm_source || '').toLowerCase(), d = new Date();
+  const pad = n => String(n).padStart(2, '0');
+  const iso = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+  const full = $('f_nombre').value.trim().replace(/\s+/g, ' ');
+  const [nombre, ...ap] = full.split(' ');
+  const sells = A.tipoLead !== 'comprador', buys = A.tipoLead !== 'vendedor';
+  const resumen = [
+    'Entró por la página web (embudo de valoración).',
+    sells && `Vende: ${A.inmuebleVenta || '-'} en ${A.poblacionVenta || '-'} · Plazo: ${A.plazo || '-'} · Motivo: ${A.motivo || '-'}`,
+    buys && `Busca en: ${A.zonasInteres || '-'}`,
+    u.utm_source && `Campaña: ${[u.utm_source, u.utm_medium, u.utm_campaign, u.utm_content].filter(Boolean).join(' / ')}`,
+  ].filter(Boolean).join('\n');
+  const lead = {
+    tipoLead: A.tipoLead, estado: 'nuevo',
+    nombre: nombre.slice(0, 60), apellidos: ap.join(' ').slice(0, 80),
+    telefono: $('f_tel').value.trim().slice(0, 20), email: $('f_email').value.trim().slice(0, 120),
+    origen: /^(ig|instagram)$/.test(src) ? 'Instagram' : 'Otro', idioma: 'es',
+    canal: 'Landing web', notas: resumen,
+    motivoDetalle: $('f_msg').value.trim().slice(0, 1200),
+    fecha: `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`, fechaISO: iso, createdAt: Date.now(),
+    ownerUid: '', ownerNombre: '', consentimiento: true, ...u,
+  };
+  if (sells) Object.assign(lead, { inmuebleVenta: A.inmuebleVenta || '', poblacionVenta: A.poblacionVenta === 'Otra zona' ? '' : (A.poblacionVenta || ''), plazo: A.plazo || '', motivo: A.motivo || '' });
+  if (buys) Object.assign(lead, { zonasInteres: A.zonasInteres === 'Otra zona' ? '' : (A.zonasInteres || '') });
+  if (A.tipoLead === 'comprador') Object.assign(lead, { financiacion: A.financiacion || '', momento: A.momento || '' });
+  if (A.tipoLead === 'ambos') lead.necesitaVender = 'Sí';
+  return lead;
+}
+const toFs = o => Object.fromEntries(Object.entries(o).map(([k, v]) => [k,
+  typeof v === 'boolean' ? { booleanValue: v } : typeof v === 'number' ? { integerValue: String(v) } : { stringValue: String(v) }]));
+
+async function send() {
+  if (sending) return;
+  if ($('hp').value) { done(); return; }                 // bot: fingimos éxito y no guardamos
+  try { if (Date.now() - (+localStorage.getItem('lz_sent') || 0) < 60000) { done(); return; } } catch (e) {}
+  sending = true; $('next').disabled = true; $('next').textContent = 'Enviando…';
+  const lead = buildLead();
+  const id = 'l' + Date.now() + Math.random().toString(36).slice(2, 7);   // mismo formato de ID que el CRM
+  const url = `https://firestore.googleapis.com/v1/projects/${FB.projectId}/databases/(default)/documents/leads?documentId=${id}&key=${FB.apiKey}`;
+  try {
+    const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fields: toFs(lead) }) });
+    if (!r.ok) throw new Error(r.status + ' ' + (await r.text()).slice(0, 300));
+    try { localStorage.setItem('lz_sent', Date.now()); } catch (e) {}
+    if (typeof fbq === 'function') fbq('track', 'Lead');           // Píxel de Meta, si lo añades
+    if (typeof gtag === 'function') gtag('event', 'generate_lead');  // Google Analytics, si lo añades
+    done();
+  } catch (e) {
+    console.error('No se pudo guardar el lead:', e);
+    const wa = CONFIG.whatsapp ? ` o escríbenos por <a href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">WhatsApp</a>` : '';
+    $('errF').innerHTML = `No hemos podido enviar tus datos. Inténtalo de nuevo${wa}.`;
+    $('next').disabled = false; $('next').textContent = 'Reintentar';
+  } finally { sending = false; }
+}
+function done() {
+  const n = $('f_nombre').value.trim().split(' ')[0] || 'gracias';
+  $('thxName').textContent = n;
+  if (CONFIG.whatsapp) $('waBtn').href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('Hola, soy ' + n + '. Acabo de pedir información en la web.')}`;
+  else $('waBtn').style.display = 'none';
+  qs.forEach(q => q.classList.remove('on')); document.querySelector('[data-q="gracias"]').classList.add('on');
+  $('qnav').style.display = 'none'; $('barFill').style.width = '100%'; $('count').textContent = 'Completado';
+}
+show(0);
+</script>
+</body>
+</html>
