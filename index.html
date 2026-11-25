@@ -171,7 +171,7 @@ footer a{color:var(--mute)}
 
 <header id="hdr">
  <div class="wrap nav">
-  <a class="logo" href="#top"><i>CZ</i><span data-cfg="marca">Captación Zona</span></a>
+  <a class="logo" href="#top"><i>CM</i><span data-cfg="marca">Casa Mares Real Estate</span></a>
   <nav class="nav-links"><a href="#metodo">Método</a><a href="#zonas">Zonas</a><a href="#faq">Preguntas</a></nav>
   <a class="btn p" href="#valoracion">Valoración gratuita</a>
  </div>
@@ -372,7 +372,7 @@ footer a{color:var(--mute)}
 
 <footer>
  <div class="wrap">
-  <span>© <span id="yr"></span> <span data-cfg="marca">Captación Zona</span><span id="telPie"></span></span>
+  <span>© <span id="yr"></span> <span data-cfg="marca">Casa Mares Real Estate</span><span id="telPie"></span></span>
   <span><a href="#privacidad" id="privLink2">Política de privacidad</a></span>
  </div>
 </footer>
@@ -390,10 +390,10 @@ footer a{color:var(--mute)}
    CONFIGURACIÓN: cambia estos datos por los tuyos
    ====================================================================== */
 const CONFIG = {
-  marca: 'Captación Zona',              // Nombre que se ve en la página
-  telefonoVisible: '',                  // Ej.: '600 123 456' (se ve en el pie)
-  whatsapp: '',                         // Solo números con prefijo, ej.: '34600123456'
-  privacidadTexto: 'Responsable: ' + 'Captación Zona' + '. Finalidad: atender tu solicitud de valoración o búsqueda de vivienda y contactarte sobre ella. Legitimación: tu consentimiento. No cedemos tus datos a terceros. Puedes ejercer tus derechos de acceso, rectificación y supresión escribiéndonos.',
+  marca: 'Casa Mares Real Estate',            // Nombre que se ve en la página
+  telefonoVisible: '624 23 58 17',             // Ej.: '600 123 456' (se ve en el pie)
+  whatsapp: '34624235817',              // Solo números con prefijo, ej.: '34600123456'
+  privacidadTexto: 'Responsable: Casa Mares Real Estate. Finalidad: atender tu solicitud de valoración o búsqueda de vivienda y contactarte sobre ella. Legitimación: tu consentimiento. No cedemos tus datos a terceros. Puedes ejercer tus derechos de acceso, rectificación y supresión escribiéndonos.',
   privacidadUrl: '',                    // Si tienes una página propia de privacidad, pon su URL aquí
 };
 /* Firebase: el mismo proyecto que usa tu CRM */
@@ -415,7 +415,7 @@ const LABEL = { 'Paga sin hipoteca':'Compro sin hipoteca', 'Sin estudio':'Aún n
 const $ = id => document.getElementById(id);
 document.querySelectorAll('[data-cfg]').forEach(e => e.textContent = CONFIG[e.dataset.cfg] || '');
 $('yr').textContent = new Date().getFullYear();
-if (CONFIG.telefonoVisible) $('telPie').textContent = ' · ' + CONFIG.telefonoVisible;
+if (CONFIG.telefonoVisible) $('telPie').innerHTML = ` · <a href="tel:+${CONFIG.whatsapp || CONFIG.telefonoVisible.replace(/\D/g,'')}">${CONFIG.telefonoVisible}</a>` + (CONFIG.whatsapp ? ` · <a href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">WhatsApp</a>` : '');
 $('zonesList').innerHTML = L.MUN.filter(z => z !== 'Otra zona').map(z => `<span>${z.replace('Barcelona - ','Barcelona · ')}</span>`).join('');
 document.querySelectorAll('[data-list]').forEach(box => {
   box.innerHTML = L[box.dataset.list].map((v,i) => `<button type="button" class="opt" data-v="${v}"><kbd>${i+1}</kbd><span>${(LABEL[v]||v).replace('Barcelona - ','BCN · ')}</span></button>`).join('');
