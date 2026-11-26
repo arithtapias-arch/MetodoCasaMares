@@ -103,8 +103,8 @@ details p{margin:12px 0 0;color:var(--mute)}
 /* Form section */
 .form-sec{background:var(--navy-d);padding:96px 0}
 .form-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-.form-sec .intro h2{color:#fff;font-size:clamp(30px,4vw,46px);margin-top:12px}
-.form-sec .intro p{color:var(--on-navy-mute);margin:18px 0 0}
+.form-sec .form-intro h2{color:#fff;font-size:clamp(30px,4vw,46px);margin-top:12px}
+.form-sec .form-intro p{color:var(--on-navy-mute);margin:18px 0 0}
 .form-sec .eyebrow{color:var(--sky)}
 .quiz{background:var(--card);border-radius:26px;padding:34px;box-shadow:0 20px 60px #0005;min-height:460px;display:flex;flex-direction:column}
 .bar{height:6px;background:var(--soft);border-radius:9px;overflow:hidden;margin-bottom:10px}
@@ -318,7 +318,7 @@ footer a{color:#fff}
 
  <section class="form-sec" id="valoracion">
   <div class="wrap form-grid">
-   <div class="intro">
+   <div class="form-intro">
     <span class="eyebrow">Valoración gratuita</span>
     <h2>El primer paso no es publicar. Es saber dónde estás.</h2>
     <p>Responde unas preguntas rápidas (menos de 1 minuto). Revisamos tu caso y, si podemos ayudarte, te llamamos en menos de 24 horas.</p>
@@ -432,7 +432,7 @@ const CONFIG = {
   whatsapp: '34624235817',              // Solo números con prefijo, ej.: '34600123456'
   privacidadTexto: 'Responsable: Casa Mares Real Estate. Finalidad: atender tu solicitud de valoración o búsqueda de vivienda y contactarte sobre ella. Legitimación: tu consentimiento. No cedemos tus datos a terceros. Puedes ejercer tus derechos de acceso, rectificación y supresión escribiéndonos.',
   privacidadUrl: '',                    // Si tienes una página propia de privacidad, pon su URL aquí
-  webCasaMares: '',                     // Web de Casa Mares (enlace bajo tu foto), ej.: 'https://www.ejemplo.com'
+  webCasaMares: 'https://inmocasamares.com/',                   // Web de Casa Mares (enlace bajo tu foto), ej.: 'https://www.ejemplo.com'
 };
 /* Firebase: el mismo proyecto que usa tu CRM */
 const FB = { apiKey: 'AIzaSyCqLslzaYONrp0aCzcVInlDniixgZPXlJM', projectId: 'captacionzona' };
